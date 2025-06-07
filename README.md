@@ -62,6 +62,12 @@ This starter includes Algolia search integration. To set it up:
    - `NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY` - Your Algolia search-only API key
    - `NEXT_PUBLIC_ALGOLIA_INDEX_NAME` - Your index name
 
+## Radio Page Example
+
+This project now includes a simple internet radio page. During development run
+`npm run dev` and open [http://localhost:3000/radio](http://localhost:3000/radio)
+to test streaming audio in the browser.
+
 ## Next Steps
 
 Here are a few suggestions on what to do next if you're new to Netlify visual editor:
