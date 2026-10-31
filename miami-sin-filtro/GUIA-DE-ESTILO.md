@@ -1,158 +1,102 @@
-# Miami Sin Filtro: guía de estilo visual
+# Miami Sin Filtro: guía de estilo
 
-**Nombre del estilo:** Miami Sin Filtro — Minimalist 2D Stickman Editorial Cartoon
-**Acabado elegido:** digital limpio, de aspecto vectorial (ver la variante a mano al final).
+> **La regla número uno: la ficha original manda.**
+> `referencia/ficha-original.jpg` es la fuente de verdad del estilo y del mundo. Si algo de esta guía contradice la ficha, gana la ficha.
 
-![Hoja de modelo de personajes](personajes.png)
+![Ficha original](referencia/ficha-original.jpg)
 
-`personajes.svg` es la hoja de modelo editable: abre el SVG en Figma, Illustrator o Inkscape para sacar poses nuevas.
+## La esencia en una frase
 
----
-
-## 1. Master style prompt (va en TODOS los prompts)
-
-```
-Clean minimalist 2D stickman editorial cartoon illustration, flat vector-like digital art, oversized perfectly round pure white character heads, thin uniform black outlines, simple black stick-line arms and legs, tiny dot eyes, sarcastic half-closed expressions, minimal facial features, simple geometric bodies, flat solid pastel colors, simplified tropical Miami environments, clean white backgrounds, subtle humorous visual storytelling, modern explainer animation aesthetic, crisp edges, consistent line thickness, professional minimal cartoon composition.
-```
-
-### Negative prompt (para los generadores que lo admiten)
-
-```
-gradients, realistic shading, 3D rendering, painterly effects, watercolor, paper texture, sketchy strokes, realistic faces, detailed anatomy, noses, ears, fingers, photo, text artifacts, cluttered background, dark moody lighting
-```
-
-> En los generadores sin campo negativo, deja el `no gradients, no realistic shading, no 3D rendering, no painterly effects, no watercolor, no paper texture, no sketchy strokes` al final del master prompt.
-
-**Cómo armar un prompt:** `[ESCENA] + [PERSONAJE(S)] + [LUGAR] + MASTER STYLE PROMPT + formato`
+**Doodles minimalistas, expresivos y sarcásticos que dicen más con menos:** muñecos de cabeza blanca enorme dibujados a mano con tinta negra, sobre papel crema, con toques pastel de marcador.
 
 ---
 
-## 2. Reglas fijas
+## 1. Cómo se ve (tomado de la ficha)
 
-| Elemento | Regla |
+| Elemento | Cómo es en la ficha |
 | --- | --- |
-| Cabeza | Círculo perfecto, blanco puro, ~1/3 de la altura total del personaje |
-| Contorno | Negro `#111111`, grosor uniforme, puntas redondeadas |
-| Cuerpo | Una línea recta de torso; brazos y piernas son palitos sin manos ni pies dibujados |
-| Ojos | Dos puntos. El tono sarcástico sale de un párpado recto encima del punto |
-| Boca | Una línea: recta (seco), curva (sonrisa), invertida (fastidio) |
-| Sin dibujar | Nariz, orejas, dedos, sombras, brillos, degradados |
-| Color | Solo en accesorios, pelo, ropa mínima y fondos. Rellenos planos |
-| Fondo | Blanco limpio o escenario de Miami con formas geométricas simples |
-| Perspectiva | Casi plana, 2D, cámara a la altura del pecho |
+| Trazo | Tinta negra **a mano**, con un ligero temblor. No es vectorial perfecto: los círculos casi cierran |
+| Fondo | Papel crema / blanco cálido, con recuadros redondeados de contorno suave |
+| Cabeza | Muy grande, blanca y redonda (algo ovalada), sin nariz ni orejas |
+| Cuerpo | Torso con **contorno de camisa o saco** (no es un palito), relleno blanco o de un color |
+| Brazos y piernas | Un solo trazo fino, **manos redondas pequeñas**, pies como óvalos negros |
+| Ojos de Jay | **Párpado pesado:** una línea recta tapa medio ojo y la pupila cuelga debajo. Cejas cortas, una levemente arqueada |
+| Boca | Una línea corta y plana. Jay casi nunca sonríe |
+| Color | Pastel de marcador: rosa, menta, amarillo, azul cielo, coral, lavanda. Plano, sin brillos |
+| Pelo | Gris oscuro con mechones de lápiz |
+| Textos | Letra a mano en mayúsculas para títulos y letra de imprenta a mano para notas |
+| Rótulos | Etiquetas de color como cinta adhesiva (EL PROTAGONISTA, LUGARES CLAVE…) |
+| Detalles | Corazones, signos "?", destellos ✦, rayitas de movimiento, vapor de café |
 
 ### Paleta
 
-| Color | Hex | Uso típico |
+| Color | Hex | Uso en la ficha |
 | --- | --- | --- |
-| Tinta | `#111111` | Líneas, gafas, micrófono |
-| Blanco | `#FFFFFF` | Cabezas, fondo |
-| Rosa flamenco | `#F7B6C2` | Logo MSF, corazones, acentos de marca |
-| Menta Ocean Drive | `#A8E0D1` | Mar, art deco, ropa |
-| Cielo Miami | `#A7D3F2` | Cielo, pantallas, credenciales |
-| Amarillo sol | `#FBE3A1` | Sol, libreta, carteles |
-| Lavanda | `#CDBEF0` | Noche, neón suave |
-| Coral | `#F9A98B` | Gorras, autos, atardecer |
+| Tinta | `#1E1E1E` | Todo el contorno, gafas, micro, fedora |
+| Papel | `#FBF7EF` | Fondo |
+| Rosa | `#F2A7B5` | Títulos de sección, corazones, flamenco |
+| Menta | `#9ED6CB` | Mar, palmeras, art deco |
+| Amarillo | `#F7DC8C` | "Así es él", sol, carteles |
+| Azul cielo | `#A9CDEB` | Pantallas, cielo, "Su día a día" |
+| Coral | `#F4A483` | Autos, atardecer |
+| Lavanda | `#C9BCEB` | Edificios, noche |
+| Rojo MSF | `#E0646A` | Etiqueta MSF del micrófono, "ON AIR" |
 
 ---
 
-## 3. Personajes: prompts de consistencia
+## 2. Prompt maestro para generadores de imágenes
 
-Copia el bloque del personaje y añade la escena + el master prompt.
-
-**Jay Fontana (protagonista)**
 ```
-Jay Fontana, a stickman reporter with an oversized round white head, half-closed sarcastic eyes with flat eyelids, one eyebrow raised, flat unimpressed mouth line, black stick body, wearing a press badge on a lanyard, holding a black handheld microphone with a small pink "MSF" flag, carrying a small yellow notebook
+Hand-drawn minimalist doodle illustration in the style of a sarcastic comic world-bible sheet: stick-figure characters with oversized round white heads, heavy half-closed eyelids with small hanging pupils, short flat mouth line, simple outlined shirt-shaped bodies, thin single-line arms and legs with small round hands, slightly wobbly black ink lines, soft flat pastel marker colors (pink, mint, butter yellow, sky blue, coral, lavender), warm cream paper background, simplified tropical Miami scenery with palm trees and pastel art deco buildings, handwritten lettering, minimalist, expressive, says more with less, deadpan humor
 ```
 
-**DJ Chisme**
+### Lo que no debe aparecer
+
 ```
-DJ Chisme, a stickman with an oversized round white head, black fedora hat with a pink band, black rectangular sunglasses, small knowing smirk, shrugging with both stick arms raised, the gossip insider who knows everything
+3D, realistic shading, gradients, glossy vector, photorealism, detailed anatomy, noses, ears, fingers, anime, thick cartoon outlines, dark background, cluttered composition
 ```
 
-**La Interna**
-```
-La Interna, a young stickman woman with an oversized round white head, long straight dark brown hair, small dot eyes, playful smile, mint triangle skirt, holding a light blue smartphone in one hand and a mini microphone in the other, fast and ironic TikTok energy
-```
-
-**Don Pepe**
-```
-Don Pepe, an older stickman taxi driver with an oversized round white head, coral flat cap, round thin glasses, thick black mustache, one stick arm raised as if explaining a philosophical theory, small question marks floating near his head
-```
-
-**La Influencer**
-```
-La Influencer, a stickman woman with an oversized round white head, long pastel-blonde hair, flirty curved eyes, open smiling mouth, pink triangle skirt, holding a selfie stick with a phone up high, making a peace sign, small pink hearts floating around
-```
-
-**El Editor**
-```
-El Editor, a cynical stickman with an oversized round white head, heavy flat eyelids and angled frowning eyebrows, small frown, arms crossed, holding a steaming white coffee mug, a yellow sign above him that reads "¿Y LA NOTA?"
-```
+**Fórmula:** `[ESCENA] + [PERSONAJE] + [LUGAR] + PROMPT MAESTRO`
 
 ---
 
-## 4. Lugares clave: prompts de escenario
+## 3. Personajes (prompts de consistencia)
 
-**La Playa:** `simplified Miami beach, flat pastel sand and mint sea, one pink-and-white striped beach umbrella, two simple palm trees, flat yellow sun, clean white sky`
+**Jay Fontana:** `Jay Fontana, deadpan stickman reporter, oversized round white head, heavy half-closed eyelids, one eyebrow slightly raised, short flat mouth, white shirt-shaped body, press badge on a lanyard, black handheld microphone with a red "MSF" label, small notebook under his arm`
 
-**Ocean Drive:** `simplified Ocean Drive street, flat pastel art deco buildings in mint, pink and lavender, rounded neon signs without readable text, simple palm trees, a couple of flat coral and yellow classic cars`
+**Jay en modo ON AIR:** `same Jay Fontana wearing black rectangular sunglasses and a tiny smirk, holding the MSF microphone toward the camera`
 
-**Little Havana:** `simplified Little Havana corner, flat pastel storefronts, a ventanita coffee window, domino table under a palm tree, rooster silhouette, warm yellow and coral tones`
+**DJ Chisme:** `DJ Chisme, stickman with black fedora with a pink band, black sunglasses, dark shirt, knowing smirk, both hands raised in a shrug`
 
-**Wynwood:** `simplified Wynwood street, flat pastel walls with geometric graffiti murals in bold flat shapes, warehouse doors, a food truck`
+**La Interna:** `La Interna, young stickman woman, long dark wavy hair drawn in pencil, dot eyes, big smile, mint striped shirt, phone in one hand and a microphone in the other`
 
-**El Tráfico:** `simplified Miami highway traffic jam, rows of flat pastel cars, tiny city skyline in the background, palm trees on the median, cars honking shown with simple black lines`
+**Don Pepe:** `Don Pepe, older stickman taxi driver, bald with tufts of white hair, round glasses, big grey mustache, hand on chin, floating question marks`
 
-**Base de operaciones (estudio MSF):** `small cluttered news studio in Wynwood, simple wooden desk, black office chair, red "ON AIR" sign, "MSF NEWS" monitor, potted plant, big window with palm trees, coffee mug that says "CAFÉ + CAOS"`
+**La Influencer:** `La Influencer, stickman woman with long dark hair, happy closed eyes, open smile, pink shirt, selfie phone held high, peace sign, little pink hearts floating around`
 
----
-
-## 5. Plantillas de escena por sección del programa
-
-**Portada / thumbnail**
-```
-Jay Fontana standing in the center holding his microphone toward the viewer with a deadpan expression, behind him a simplified pastel Miami skyline with palm trees, bold empty space at the top for a headline, [MASTER STYLE PROMPT], 16:9 thumbnail composition
-```
-
-**"Solo en Miami"**
-```
-Jay Fontana reporting with a deadpan face while in the background [ABSURD MIAMI SITUATION, e.g. a flamingo directing traffic on Ocean Drive], other stickman pedestrians acting completely normal, [MASTER STYLE PROMPT], vertical 9:16
-```
-
-**"Gente que no lo podía creer"**
-```
-Jay Fontana interviewing a shocked stickman with wide dot eyes and an open mouth, both standing on [LOCATION], small exclamation marks floating around, [MASTER STYLE PROMPT], vertical 9:16
-```
-
-**"Alerta WTF"**
-```
-Jay Fontana at the MSF news desk under a flashing flat red "WTF?!" sign, holding a paper headline, sarcastic half-closed eyes looking straight at the camera, [MASTER STYLE PROMPT], vertical 9:16
-```
-
-**Cierre (frase icónica)**
-```
-Jay Fontana walking away into a flat pastel Miami sunset, microphone over his shoulder, palm trees silhouetted in flat coral and lavender, empty space for the closing line, [MASTER STYLE PROMPT]
-```
+**El Editor:** `El Editor, grumpy stickman with heavy eyelids and angry eyebrows, frown, blue shirt, working at a laptop or holding a coffee, zero patience`
 
 ---
 
-## 6. Variante "a mano" (opcional)
+## 4. Láminas generadas
 
-Para que se parezca más a la ficha original, que tiene un ligero aspecto de dibujo a mano, cambia el final del master prompt:
+Están en `laminas/` y se regeneran con `python3 herramientas/generar.py`:
 
-- **Quita:** `crisp edges, consistent line thickness`, y saca `paper texture, sketchy strokes` del negative prompt.
-- **Añade:** `hand-drawn doodle feel, slightly wobbly ink lines, subtle off-white paper background, marker-like flat color fills`
+| Lámina | Contenido |
+| --- | --- |
+| `01-personajes` | Hoja de modelo de los 6 personajes |
+| `02-jay-modos` | Jay en modo Calle, On Air y Estudio |
+| `03-ep01-portada` | Portada del Episodio 01: "Un flamenco dirige el tráfico en Ocean Drive" |
 
-Elige una de las dos versiones y úsala en toda la serie. Si las mezclas, la serie pierde consistencia.
+`herramientas/dibujo.py` es el motor de trazo a mano: cada personaje es una función (`jay()`, `dj_chisme()`, `don_pepe()`…), igual que la escenografía (`palmera()`, `auto()`, `flamenco()`, `edificio_deco()`). Para una escena nueva, se combinan esas piezas.
 
 ---
 
-## 7. Checklist antes de publicar una imagen
+## 5. Checklist antes de publicar
 
-- [ ] ¿Cabeza blanca perfectamente redonda y sin nariz ni orejas?
-- [ ] ¿Ojos de punto con párpado recto (Jay siempre medio dormido / irónico)?
-- [ ] ¿Sin degradados, sombras ni texturas?
-- [ ] ¿Colores solo de la paleta?
-- [ ] ¿El accesorio clave del personaje está visible (micro MSF, fedora, gorra, selfie stick, café)?
-- [ ] ¿El chiste se entiende sin leer texto?
+- [ ] ¿Se ve hecho a mano, en papel crema, como la ficha?
+- [ ] ¿Cabeza blanca grande y sin nariz ni orejas?
+- [ ] ¿Jay tiene el párpado pesado y la boca plana (salvo en modo ON AIR)?
+- [ ] ¿Cada personaje lleva su accesorio clave? (micro MSF, fedora, gorra, selfie, café)
+- [ ] ¿Colores solo de la paleta pastel?
+- [ ] ¿El chiste se entiende con un vistazo?
